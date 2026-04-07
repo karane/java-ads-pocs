@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 
 public class SinglyLinkedList<T> {
 
-    private Node<T> head;
+    Node<T> head;
     private Node<T> tail;
     private int size;
 
@@ -122,6 +122,10 @@ public class SinglyLinkedList<T> {
         return size == 0;
     }
 
+    public Node<T> getFirstNode() {
+        return head;
+    }
+
     public List<T> toList() {
         List<T> result = new ArrayList<>(size);
         Node<T> current = head;
@@ -149,7 +153,7 @@ public class SinglyLinkedList<T> {
     }
 
     public T findMiddle() {
-        return MiddleNode.find(head);
+        return MiddleNode.find(this);
     }
 
     private Node<T> nodeAt(int index) {
